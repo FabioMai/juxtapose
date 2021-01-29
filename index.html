@@ -6,9 +6,9 @@
     <title>Nymphenburg Seasons</title>
     <style>
       body {
-        height: 100vh;
         margin: 0; /* Reset default margin */
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
       }
@@ -16,11 +16,19 @@
         width: 100%;
         max-width: 992px;
       }
+      .container2 {
+        width: 100%;
+        max-width: 992px;
+      }
     </style>
+    <link
+      rel="stylesheet"
+      href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css"
+    />
   </head>
   <body>
+    <h1>Schloss Nymphenburg</h1>
     <div class="container">
-      <h1>Schloss Nymphenburg</h1>
       <iframe
         frameborder="0"
         class="juxtapose"
@@ -28,7 +36,37 @@
         height="753px"
         src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=02f85968-623f-11eb-83c8-ebb5d6f907df"
       ></iframe>
-      <h1>Lake Agnes</h1>
     </div>
+    <h1>Lake Agnes</h1>
+    <div class="container">
+      <div class="juxtapose" id="agnes"></div>
+    </div>
+    <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
   </body>
+  <script>
+    slider_horizontal = new juxtapose.JXSlider(
+      "#agnes",
+      [
+        {
+          src:
+            "https://raw.githubusercontent.com/FabioMai/juxtapose/main/Lake%20Agnes%20Sonne.png",
+          label: "Sonnig",
+          credit: "Wikimedia",
+        },
+        {
+          src:
+            "https://raw.githubusercontent.com/FabioMai/juxtapose/main/Lage%20Agnes%20Schnee.png",
+          label: "Kühl",
+          credit: "Fabio Maienschein",
+        },
+      ],
+      {
+        animate: true,
+        showLabels: true,
+        showCredits: true,
+        startingPosition: "50%",
+        makeResponsive: true,
+      }
+    );
+  </script>
 </html>
